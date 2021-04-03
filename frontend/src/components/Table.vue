@@ -25,6 +25,7 @@
       :img="item.img"
       :key="item.id"
       >
+      <img :src="item.img" style="width:80px;height:80px;">
     </div>
   </draggable>
 
@@ -65,7 +66,7 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
 .table{
   position: absolute;
   top: 120px;
@@ -82,7 +83,6 @@ export default {
 .table-list-item{
   width:80px;
   height: 80px;
-  background-color: #232323;
 }
 .table-heading div:nth-child(1){
   border-top:1px solid black;
@@ -96,6 +96,8 @@ export default {
 }
 .table-heading-button{
   position:relative;
+
+  transition: 0.5s;
 }
 .table-heading-button-wall{
   width:20px;

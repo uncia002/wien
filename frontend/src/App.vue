@@ -2,8 +2,9 @@
   <div id="app">
     <WienHeader/>
     <Table/>
-    <Tmplist/>
-    <!-- <Upload/> -->
+    <Tmplist :tmplist="tmplist" @reverse="uploadState=true"/>
+    <Upload v-show="uploadState" :tmplist="tmplist"
+    @close="uploadState=false"/>
   </div>
 </template>
 
@@ -19,6 +20,14 @@ export default {
     'Table':Table,
     'Tmplist':Tmplist,
     'Upload':Upload
+  },
+  data(){
+    return {
+      uploadState:false,
+      tmplist:[
+        {img:"",id:10},{img:"",id:11},{img:"",id:12},
+      ],
+    }
   }
 }
 </script>
@@ -29,6 +38,7 @@ html,body{
   height: 100%;
   overflow-y:hidden
 }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
