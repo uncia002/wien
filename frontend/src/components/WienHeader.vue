@@ -3,9 +3,11 @@
   <div class="navbar">
   </div>
   <div class="editbar">
+
     <div class="editbar-button">
       <a>hjkhkjhk</a>
     </div>
+
   </div>
 </div>
 </template>
@@ -16,7 +18,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .header{
   width: 100%;
   height: 80px;

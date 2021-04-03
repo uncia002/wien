@@ -11,14 +11,14 @@
       :img="tmplist.img"
       :id="tmplist.id"
       >
+      <img :src="item.img" style="width:80px;height:80px;">
       </div>
     </draggable>
-    <label for="input_newimg">
-      <div class="tmplist-newimgbtn">
-        <a >+</a>
-      </div>
-    </label>
-    <input @change="setImage" type="file" name="image" accept="image/*" id="input_newimg">
+    <div @click="reverse" class="tmplist-newimgbtn">
+      <a>+</a>
+    </div>
+
+
   </div>
 </template>
 
@@ -29,30 +29,31 @@ export default {
   components: {
     draggable,
   },
+  props:["uploadState","tmplist"],
   data(){
     return {
-
-      tmplist:[
-        {img:"",id:10},{img:"",id:11},{img:"",id:12},
-      ]
-
+    }
+  },
+  methods:{
+    reverse(){
+      this.$emit('reverse')
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .tmplist{
   width: 80px;
   position: absolute;
   top: 120px;
   right: 20px;
   margin: auto;
+  z-index:2;
 }
 .tmplist-item{
   width:80px;
   height: 80px;
-  background-color:#232323;
 }
 .tmplist-newimgbtn {
   width:80px;
