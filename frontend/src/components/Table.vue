@@ -103,7 +103,7 @@ export default {
   data(){
     return {
       tablelist:[
-        {no:1,title:"S",subtitle:"1~10",items:[{img:require("@/assets/a0.jpg"),id:1},{img:require("@/assets/a1.jpg"),id:2},{img:require("@/assets/a2.jpg"),id:3}]},
+        {no:1,title:"S",subtitle:"1~10",items:[{img:require("../assets/a0.jpg"),id:1},{img:require("../assets/a1.jpg"),id:2},{img:require("../assets/a2.jpg"),id:3}]},
         {no:2,title:"A",subtitle:"10~100",items:[]},
         {no:3,title:"B",subtitle:"100~1000",items:[]},
       ],
