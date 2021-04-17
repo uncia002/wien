@@ -160,7 +160,6 @@ select{
 	line-height: 100%;
 	border-radius: 5px;
 	border: none;
-	background-image: require("@/assets/pic03-14.png");
 	background-repeat: no-repeat;
 	background-size: 12px 10px;
 	background-position: right 10px center;
