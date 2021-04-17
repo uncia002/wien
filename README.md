@@ -1,6 +1,25 @@
 # wien
 
-# Demo、使用例動画
+## 環境構築
+- NPM 7.6.3 
+- Python 3.8.0
+- Flask 1.1.1
+
+#### 1.リポジトリをクローン
+```
+git clone https://github.com/uncia002/waage.git
+```
+#### 2.Nodeの依存関係のインストール
+```
+cd front
+npm install
+```
+#### 3.開発を始める
+```
+npm run dev
+```
+
+## Demo、使用例動画
 Demo:https://uncia002.github.io/wien/#/
 使用例https://www.youtube.com/watch?v=ZOvA-0TlpM4
 
@@ -8,8 +27,7 @@ Demo:https://uncia002.github.io/wien/#/
 #### repair
 - Result画面のwidthが長すぎる問題
 $rootを使ってグローバルに画像のwidthを格納しようと思っている
-- Result のheadingitemのtitleがバグっている
-違う定義方法をするしかない
+
 - 速度が遅い、重い
 みんなのパソコンのramを増やそう、8GBは時代遅れだぞ！
 
