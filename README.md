@@ -9,7 +9,7 @@
 
 #### 1.リポジトリをクローン
 ```
-git clone https://github.com/uncia002/waage.git
+git clone https://github.com/uncia002/wien.git
 ```
 #### 2.Nodeの依存関係のインストール
 ```
