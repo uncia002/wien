@@ -3,11 +3,6 @@
     <div class="table-relative" >
       <div class="table-title" >
         <h1 >Table</h1>
-        <div style="margin-top:10px;">
-          <p>list:{{ tablelist.length}}</p>
-          <p >background-color:{{bgcolor}} </p>
-          <p>{{ colorList}}</p>
-        </div>
       </div>
       <div class="table-detail">
         <p>Drag and drop the image to move it. Images can be added from "index". Click on the image to see the options</p>
@@ -61,9 +56,15 @@
 
 <script>
 let i
+let foo
 var colorList=["DB3A34","FFC857"]
 import draggable from 'vuedraggable'
 let x,newlist
+const defalist =[
+  {no:1,title:"S",subtitle:"1~10",items:[]},
+  {no:2,title:"A",subtitle:"10~100",items:[]},
+  {no:3,title:"B",subtitle:"100~1000",items:[]},
+]
 function splitColor(c1,c2,times){
     var r1 = parseInt( c1.substr(1,2), 16 ) ;
     var g1 = parseInt( c1.substr(3,2), 16 ) ;
@@ -111,7 +112,7 @@ export default {
       itemstatus:30,
       changeinfo:{no:0,id:0},
       edgediff:5,
-      colorList:["#DB3A34","#ED8145","#FFC857"]
+      colorList:["#DB3A34","#ED8145","#FFC857"],
     }
   },
   methods:{
@@ -145,7 +146,15 @@ export default {
       }else{
         this.itemstatus=id
       }
-    }
+    },
+    resetTable(){
+      for (let i=0;i<this.tablelist.length;i++){
+        foo=this.tablelist[i].items.splice(0,this.tablelist[i].items.length)
+        if (i>2){
+          foo= this.tablelist.splice(i,1)
+        }
+      }
+    },
   },
   computed:{
     reverseEdge(){
@@ -159,8 +168,9 @@ export default {
           case 1:
             return "#222222";
           case 2:
-
             return this.colorList[number];
+          case 3:
+            return this.bgcolor
         }
       }
     },
@@ -173,6 +183,8 @@ export default {
             return "white";
           case 2:
             return blackOrWhite(this.colorList[number]);
+          case 3:
+            return blackOrWhite(this.bgcolor)
           }
       }
     },
@@ -182,7 +194,7 @@ export default {
     reversedTextColorBG(){
       return blackOrWhite(this.bgcolor)
     }
-  }
+  },
 }
 </script>
 

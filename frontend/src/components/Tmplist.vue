@@ -1,10 +1,11 @@
 <template>
   <div class="tmplist" :style="{right: reverseRight}">
+    <h2 class="tmplist-h2">Tmp</h2>
     <div class="tmplist-relative">
-      <h2 class="tmplist-h2">Index</h2>
       <draggable
       tag="div"
-      :options="{animation:300,group:'ITEMS'}"
+      :options="{animation:300,group:'ITEMS'}" style="-ms-overflow-style: none;
+      scrollbar-width: none;"
       >
         <div
         v-for="item in tmplist"
@@ -38,7 +39,6 @@ function blackOrWhite ( hexcolor ) {
 
 export default {
   name:'Tmplist',
-
   components: {
     draggable,
   },
@@ -50,7 +50,8 @@ export default {
   methods:{
     reverse(){
       this.$emit('reverse')
-    }
+    },
+
   },
   computed:{
     reverseEdge(){
@@ -69,15 +70,22 @@ export default {
 <style scoped>
 .tmplist{
   width: 80px;
+  height:85%;
   position: absolute;
   top: 60px;
-  z-index:2;
 }
 .tmplist-relative{
   position:relative;
+  overflow-y:scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tmplist-relative::-webkit-scrollbar {
+  display:none;
 }
 .tmplist-h2{
   position:absolute;
+  padding-left:10px;
   top:-35px;
   left:0;
   font-family: 'Inter', sans-serif;
