@@ -4,11 +4,14 @@ import router from './router'
 import vuetify from '@/plugins/vuetify' // path to vuetify export
 import VueCropper from 'vue-cropperjs';
 import 'cropperjs/dist/cropper.css';
-Vue.config.devtools = true;
-Vue.config.productionTip = false
-
+import axios from 'axios' //追記
+import VueAxios from 'vue-axios' //追記
 
 /* eslint-disable no-new */
+Vue.config.devtools = true;
+Vue.config.productionTip = false
+Vue.use(VueAxios, axios) //追記
+
 new Vue({
   el: '#app',
   data:{

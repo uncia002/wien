@@ -21,6 +21,8 @@ export default {
   methods: {
     closeWindow(){
       console.log("close itemEdit");
+
+      this.$emit('reversedEditing');
       this.$emit('close');
     },
   },
