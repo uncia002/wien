@@ -72,7 +72,8 @@ python3 manage.py runserver
 ```
 
 ## アプリURL
-https://uncia002.github.io/wien/#/
+[こちらからアプリケーション（wien）に移動できます。](https://uncia002.github.io/wien/#)
+
 imageを追加するか、presetにsnsと入力しエンターを押すと、画像がtmpリストに追加されます。
 
 
