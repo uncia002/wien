@@ -1,45 +1,91 @@
 # wien
+![ダウンロード](https://user-images.githubusercontent.com/72644339/117702110-0e548c00-b203-11eb-92b0-7de160929354.png)
+上の画像のようなテーブルグラフを最速で作れるようにしたwebアプリケーションです。ミニマルなデザインでかつドラッグアンドドロップできる直感的な操作が魅力で、画像のトリミング機能などもついているためこのアプリ一つで完結するアプリケーションです
 
-簡単にミニマルデザインなテーブルグラフを作れるアプリケーションです。
-https://user-images.githubusercontent.com/72644339/117702110-0e548c00-b203-11eb-92b0-7de160929354.png
+
+
+## 技術面の話
+フロントエンド側は`githubpages`で構築し、バックエンド側は`heroku`と`cloudinore`で構築しました。リポジトリのソースには`heroku`と`cloudinore`の設定前のコードを挙げているので、自身でデプロイしたい場合は、お好きなsaasで構築してください。
+
+
 
 ## 環境構築
-- nodenode@14.16.1
+- node@14.16.1
 - npm@6.14.12
 - vue-cli@4.5.12
+- python3.8.10
+- django@3.2
+- djangorestframework
+- virtualenv
 
-#### 1.リポジトリをクローン
+### 事前知識
+- npm
+- webpack
+- axios
+- vue
+- virtualenv
+- pip
+- django
+- djangorestframework
+
+### リポジトリをクローン
 ```
 git clone https://github.com/uncia002/wien.git
 ```
-#### 2.Nodeの依存関係のインストール
+### フロントエンド
+#### 1.Nodeの依存関係のインストール
 ```
-cd front
+cd frontend
 npm install
 ```
-#### 3.開発を始める
+#### 2.開発を始める
 ```
 npm run dev
 ```
+### バックエンド
+#### 1.仮想環境を作成
+```
+virtualenv env
+env\Scripts\activate
+```
+#### 2.pythonの依存関係のインストール
+```
+cd backend
+pip3 install requirements.txt
+```
+#### 3.SECRET_KEYの作成
+```
+cd backend
+python3 get_random_secret_key.py
+SECRET_KEY='こちらにSECRET_KEYが生成されます'       #=の両端の空白をなくさないとエラーが出る
+echo SECRET_KEY='こちらに新しく生成されたSECRET_KEYを記入' > local_settings.py
+cd ..
+echo local_settings.py > .gitgnore
+```
+詳しくは[こちら](https://qiita.com/frosty/items/bb5bc1553f452e5bb8ff)を参照してください。
+#### 4.開発用サーバーの起動
+```
+cd..
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver
+```
 
-## Demo　使用例動画
-Demo:https://uncia002.github.io/wien/#/　　
+## アプリURL
+https://uncia002.github.io/wien/#/
+imageを追加するか、presetにsnsと入力しエンターを押すと、画像がtmpリストに追加されます。
 
+
+
+## 使用例動画
 使用例https://www.youtube.com/watch?v=ZOvA-0TlpM4
+UIが少し違います。
 
-## 直すところ
-#### repair
-- Result画面のwidthが長すぎる問題
-$rootを使ってグローバルに画像のwidthを格納しようと思っている
 
-- 速度が遅い、重い
-みんなのパソコンのramを増やそう、8GBは時代遅れだぞ！
+## メモ
+https://wien-backend.herokuapp.com/
+一応APIのURL及びadmin情報を記載しておきます。
+admin
+ユーザー名：user1
+パスワード:herokudjango
 
-#### update
-- 背景がさびしい
-- 適当にやった"howtouse"、"github"、"output"を改善
-- ロゴ制作
-- Table横のパラメータ表示にもっといい情報を載せたい
-- テーブルの名前も決めれるようにしたい。
-
-https://uncia002-wien.herokuapp.com/
