@@ -1,7 +1,7 @@
 # wien
 
 簡単にミニマルデザインなテーブルグラフを作れるアプリケーションです。
-(https://user-images.githubusercontent.com/72644339/117702110-0e548c00-b203-11eb-92b0-7de160929354.png)
+https://user-images.githubusercontent.com/72644339/117702110-0e548c00-b203-11eb-92b0-7de160929354.png
 
 ## 環境構築
 - nodenode@14.16.1
