@@ -74,7 +74,9 @@ python3 manage.py runserver
 ## アプリURL
 [こちらからアプリケーション（wien）に移動できます。](https://uncia002.github.io/wien/#)
 
-imageを追加するか、presetにsnsと入力しエンターを押すと、画像がtmpリストに追加されます。
+使用方法は使用例動画からご覧ください。snsプリセットを用意しているので、`プリセットを呼び出す`に`sns`と入力し、エンターを押してみてください。
+アクセスできないようでしたら`melirandeu@gmail.com`にご連絡ください
+
 
 
 
